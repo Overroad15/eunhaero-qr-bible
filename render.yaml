@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: qrbible
+    env: python
+    buildCommand: ""
+    startCommand: "python QRBIBLE.py"
+    plan: free
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
