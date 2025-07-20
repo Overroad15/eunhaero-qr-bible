@@ -24,7 +24,7 @@ CORRECT_IMAGE = '/static/correct_answer.jpg'
 
 image_and_form_template = """
 <div style='text-align: center;'>
-<h2>정답을 한글로 입력해 주세요</h2>
+<h2>👉 정답을 한글로 입력해 주세요</h2>
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
   정답: <input type='text' name='answer'><br>
@@ -36,14 +36,15 @@ image_and_form_template = """
 
 correct_page = """
 <body style="text-align:center;">
-<h2>정답입니다! 축하합니다 🎉</h2>
+<h2>🎉정답입니다! 축하합니다 🎉</h2>
 <img src='{{ correct_image }}' width='640'><br>
-<a href='/'>처음으로 돌아가기</a>
+<a href='/'>🏠처음으로 돌아가기</a>
 """
 
 success_page = """
-<h2>참여해 주셔서 감사합니다!</h2>
-<a href='/'>처음으로 돌아가기</a>
+<body style="text-align:center;">
+<h2>❌참여해 주셔서 감사합니다!</h2>
+<a href='/'>🏠처음으로 돌아가기</a>
 """
 
 admin_login_page = """
