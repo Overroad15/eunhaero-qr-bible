@@ -11,41 +11,31 @@ app.secret_key = '은혜로보물찾기_비밀키'
 LOG_FILE = 'logs.csv'
 ADMIN_PASSWORD = 'gangking15'
 
-VIDEO_FILES = [
-    '/static/video1.mp4',
-    '/static/video2.mp4',
-    '/static/video3.mp4',
-    '/static/video4.mp4',
-    '/static/video5.mp4'
+IMAGE_FILES = [
+    '/static/image1.jpg',
+    '/static/image2.jpg',
+    '/static/image3.jpg',
+    '/static/image4.jpg',
+    '/static/image5.jpg'
 ]
 
-CORRECT_ANSWER = '아삽'
-CORRECT_VIDEO = '/static/correct_answer.mp4'
+CORRECT_ANSWER = '야샤'
+CORRECT_IMAGE = '/static/correct_answer.jpg'
 
-watch_and_answer_template = """
-<h2>정답을 맞춰주세요!</h2>
-<video width='640' height='360' controls autoplay onended="document.getElementById('answer-form').style.display='block';">
-  <source src='{{ video_url }}' type='video/mp4'>
-  Your browser does not support the video tag.
-</video>
-
-<div id='answer-form' style='display:none;'>
-  <h3>정답과 정보를 한글로 입력해 주세요</h3>
-  <form method='post' action='/submit'>
-    정답: <input type='text' name='answer'><br>
-    이름: <input type='text' name='name'><br>
-    전화번호: <input type='text' name='phone'><br>
-    <input type='submit' value='제출'>
-  </form>
-</div>
+image_and_form_template = """
+<h2>이미지를 확인하시고 정답을 입력해 주세요</h2>
+<img src='{{ image_url }}' width='640'><br><br>
+<form method='post' action='/submit'>
+  정답: <input type='text' name='answer'><br>
+  이름: <input type='text' name='name'><br>
+  전화번호: <input type='text' name='phone'><br>
+  <input type='submit' value='제출'>
+</form>
 """
 
 correct_page = """
 <h2>정답입니다! 축하합니다 🎉</h2>
-<video width='640' height='360' controls autoplay>
-  <source src='{{ correct_video }}' type='video/mp4'>
-  Your browser does not support the video tag.
-</video>
+<img src='{{ correct_image }}' width='640'><br>
 <a href='/'>처음으로 돌아가기</a>
 """
 
@@ -83,8 +73,9 @@ winner_list_page = """
 
 @app.route('/')
 def index():
-    selected_video = random.choice(VIDEO_FILES)
-    return render_template_string(watch_and_answer_template, video_url=selected_video)
+    selected_image = random.choice(IMAGE_FILES)
+    session['current_image'] = selected_image
+    return render_template_string(image_and_form_template, image_url=selected_image)
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -97,7 +88,7 @@ def submit():
         writer.writerow([name, phone, answer, datetime.now().strftime('%Y-%m-%d %H:%M:%S')])
 
     if answer == CORRECT_ANSWER:
-        return render_template_string(correct_page, correct_video=CORRECT_VIDEO)
+        return render_template_string(correct_page, correct_image=CORRECT_IMAGE)
     else:
         return render_template_string(success_page)
 
