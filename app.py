@@ -35,6 +35,7 @@ image_and_form_template = """
 """
 
 correct_page = """
+<body style="text-align:center;">
 <h2>정답입니다! 축하합니다 🎉</h2>
 <img src='{{ correct_image }}' width='640'><br>
 <a href='/'>처음으로 돌아가기</a>
