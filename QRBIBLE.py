@@ -19,11 +19,11 @@ IMAGE_FILES = [
     '/static/image5.jpg'
 ]
 
-CORRECT_ANSWER = '야샤'
+CORRECT_ANSWER = '아삽'
 CORRECT_IMAGE = '/static/correct_answer.jpg'
 
 image_and_form_template = """
-<h2>이미지를 확인하시고 정답을 입력해 주세요</h2>
+<h2>정답을 한글로 입력해 주세요</h2>
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
   정답: <input type='text' name='answer'><br>
@@ -123,4 +123,5 @@ def download_logs():
     return send_file(LOG_FILE, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
