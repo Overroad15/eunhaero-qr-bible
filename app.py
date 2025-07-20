@@ -51,6 +51,7 @@ success_page = """
 """
 
 admin_login_page = """
+<body style="text-align:center;">
 <h2>관리자 로그인</h2>
 <form method='post'>
   비밀번호: <input type='password' name='password'>
