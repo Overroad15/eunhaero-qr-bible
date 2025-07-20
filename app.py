@@ -27,9 +27,9 @@ image_and_form_template = """
 <h2>👉 정답을 한글로 입력해 주세요</h2>
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
-  🎯정답 : <input type='text' name='answer'><br>
-  ⚙️이름 : <input type='text' name='name'><br>
-  📱전화번호: <input type='text' name='phone'><br>
+  <label>🎯정답 : <input type='text' name='answer'><br></label>
+  <label>⚙️이름 : <input type='text' name='name'><br></label>
+  <label>📱전화번호: <input type='text' name='phone'><br></label>
   <br>
   <input type='submit' value='제출'>
 </form>
