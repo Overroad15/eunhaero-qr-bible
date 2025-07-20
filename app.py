@@ -46,7 +46,7 @@ correct_page = """
 success_page = """
 <body style="text-align:center;">
 <h2>❌참여해 주셔서 감사합니다!❌</h2>
-<h2>🧪다시 시도해주세요</h2>
+<h2>🧪 다시 시도해주세요 🔁</h2>
 <br>
 <a href='/'>🏠처음으로 돌아가기</a>
 """
