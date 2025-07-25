@@ -22,43 +22,45 @@ IMAGE_FILES = [
 CORRECT_ANSWER = '아삽'
 CORRECT_IMAGE = '/static/correct_answer.jpg'
 
-
 image_and_form_template = """
-<div style='text-align: center; font-size: 20px; padding: 20px;'>
-  <h2>👉 정답을 한글로 입력해 주세요</h2>
-  <img src='{{ image_url }}' width='640'><br><br>
-
-  <form method='post' action='/submit'>
-    <label>🎯정답 : <input type='text' name='answer' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
-    <label>⚙️제출자 이름 : <input type='text' name='name' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
-    <label>📱전화번호: <input type='text' name='phone' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
-    <br>
-    <input type='submit' value='제출' style='font-size: 25px; padding: 10px 20px;'>
-  </form>
-
-  <hr style='margin: 40px 0;'>
-  <div style='text-align: left; display: inline-block; font-size: 18px; line-height: 1.6; max-width: 640px;'>
-    <p>🎶 아삽은 하나님을 찬양하는 일을 맡은 노래하는 선생님이었어요.</p>
-    <p>🎺 다윗 왕이 하나님께 예배드릴 때, 아삽은 악기를 연주하고 노래하며 예배를 도왔답니다.</p>
-    <p>🤔 그는 "하나님, 왜 나쁜 사람들이 잘 사나요?" 하고 마음의 고민을 솔직히 노래로 표현했어요.</p>
-    <p>📖 그의 노래는 <strong>시편 50편, 73편부터 83편</strong>까지에 있어요.</p>
-    <p style="margin-top:20px;"><strong>🌟 아삽의 찬양 중 한 구절 (시편 73:26)</strong></p>
-    <blockquote style='font-style: italic; color: #444; background: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;'>
-      "내 몸과 마음은 약해질 수 있지만,<br>
-      하나님은 내 마음의 힘이고, 내가 가지는 가장 큰 복이세요."
-    </blockquote>
-    <p>🙏 아삽은 언제나 하나님께 가까이 가는 게 가장 좋은 일이라고 믿었어요.</p>
-    <p>😊 그래서 우리도 힘들 때 하나님께 솔직하게 말하고, 찬양하며 기도할 수 있답니다. 🎵🙏</p>
-  </div>
+<div style='text-align: center; font-size: 20px;'>
+<h2>👉 정답을 한글로 입력해 주세요</h2>
+<img src='{{ image_url }}' width='640'><br><br>
+<form method='post' action='/submit'>
+  <label>🎯정답 : <input type='text' name='answer' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <label>⚙️제출자 이름 : <input type='text' name='name' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <label>📱전화번호: <input type='text' name='phone' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <br>
+  <input type='submit' value='제출' style='font-size: 25px; padding: 10px 20px;'>
+</form>
 </div>
 """
 
 correct_page = """
-<body style="text-align:center;">
-<h2 style="font-size: 32px;"> 🎉정답입니다! 축하합니다 🎉</h2>
-<img src='{{ correct_image }}' width='640'><br>
-<br>
-<a href='/'style="font-size: 24px;">🏠처음으로 돌아가기</a>
+<body style="text-align:center; font-size: 20px; padding: 20px;">
+<h2 style="font-size: 32px;">🎉 정답입니다! 축하합니다 🎉</h2>
+<img src='{{ correct_image }}' width='640'><br><br>
+
+<hr style="margin: 40px 0;">
+<div style='text-align: left; display: inline-block; text-align: left; max-width: 640px; font-size: 18px; line-height: 1.6;'>
+  <p>🎶 <strong>아삽</strong>은 하나님을 찬양하는 일을 맡은 노래하는 선생님이었어요.</p>
+  <p>🎺 다윗 왕이 하나님께 예배드릴 때, 아삽은 악기를 연주하고 노래하며 예배를 도왔답니다.</p>
+  <p>🤔 그는 "하나님, 왜 나쁜 사람들이 잘 사나요?" 하고 마음의 고민을 솔직히 노래로 표현했어요.</p>
+  <p>📖 그의 노래는 <strong>시편 50편, 73편부터 83편</strong>까지에 있어요.</p>
+
+  <p style="margin-top:20px;"><strong>🌟 아삽의 찬양 중 한 구절 (시편 73:26)</strong></p>
+  <blockquote style='font-style: italic; color: #444; background: #f9f9f9; padding: 10px; border-left: 5px solid #ccc;'>
+    "내 몸과 마음은 약해질 수 있지만,<br>
+    하나님은 내 마음의 힘이고, 내가 가지는 가장 큰 복이세요."
+  </blockquote>
+
+  <p>🙏 아삽은 언제나 하나님께 가까이 가는 게 가장 좋은 일이라고 믿었어요.</p>
+  <p>😊 그래서 우리도 힘들 때 하나님께 솔직하게 말하고, 찬양하며 기도할 수 있답니다. 🎵🙏</p>
+</div>
+
+<br><br>
+<a href='/' style="font-size: 24px;">🏠 처음으로 돌아가기</a>
+</body>
 """
 
 success_page = """
