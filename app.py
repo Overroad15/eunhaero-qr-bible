@@ -23,16 +23,17 @@ CORRECT_ANSWER = '아삽'
 CORRECT_IMAGE = '/static/correct_answer.jpg'
 
 image_and_form_template = """
-<div style='text-align: center;'>
+<div style='text-align: center; font-size: 20px;'>
 <h2>👉 정답을 한글로 입력해 주세요</h2>
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
-  <label>🎯정답 : <input type='text' name='answer'><br></label>
-  <label>⚙️이름 : <input type='text' name='name'><br></label>
-  <label>📱전화번호: <input type='text' name='phone'><br></label>
+  <label>🎯정답 : <input type='text' name='answer' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <label>⚙️이름 : <input type='text' name='name' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <label>📱전화번호: <input type='text' name='phone' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
   <br>
-  <input type='submit' value='제출'>
+  <input type='submit' value='제출' style='font-size: 20px; padding: 10px 20px;'>
 </form>
+</div>
 """
 
 correct_page = """
