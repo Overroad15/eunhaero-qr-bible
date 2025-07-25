@@ -28,10 +28,10 @@ image_and_form_template = """
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
   <label>🎯정답 : <input type='text' name='answer' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
-  <label>⚙️이름 : <input type='text' name='name' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
+  <label>⚙️제출자 이름 : <input type='text' name='name' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
   <label>📱전화번호: <input type='text' name='phone' style='font-size: 18px; padding: 8px; width: 300px;'><br></label>
   <br>
-  <input type='submit' value='제출' style='font-size: 20px; padding: 10px 20px;'>
+  <input type='submit' value='제출' style='font-size: 25px; padding: 10px 20px;'>
 </form>
 </div>
 """
