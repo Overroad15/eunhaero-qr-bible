@@ -24,6 +24,7 @@ CORRECT_IMAGE = '/static/correct_answer.jpg'
 
 image_and_form_template = """
 <div style='text-align: center; font-size: 20px;'>
+<h2>👉 다섯가지 힌트를 모두 찾아서</h2>
 <h2>👉 정답을 한글로 입력해 주세요</h2>
 <img src='{{ image_url }}' width='640'><br><br>
 <form method='post' action='/submit'>
