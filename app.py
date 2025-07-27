@@ -86,7 +86,7 @@ admin_login_page = """
 """
 
 winner_list_page = """
-<body style="text-align:center;">
+<html><body style="text-align:center;">
 <h2>당첨자 목록</h2>
 <table style="text-align:center;" border='1'>
 <tr><th>이름</th><th>전화번호</th><th>정답</th><th>시간</th></tr>
@@ -99,6 +99,7 @@ winner_list_page = """
 </tr>
 {% endfor %}
 </table>
+</body></html>
 <a href='/download-logs'>CSV 다운로드</a>
 """
 
