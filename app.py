@@ -76,6 +76,7 @@ admin_login_page = """
 <body style="text-align:center;">
 <h2>관리자 로그인</h2>
 <form method='post'>
+<body style="text-align:center;">
   비밀번호: <input type='password' name='password'>
   <input type='submit' value='로그인'>
 </form>
