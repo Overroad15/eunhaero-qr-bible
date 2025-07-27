@@ -42,8 +42,8 @@ correct_page = """
 <h2 style="font-size: 32px;">🎉 정답입니다! 축하합니다 🎉</h2>
 <img src='{{ correct_image }}' width='640'><br><br>
 
-<hr style="margin: 38px 0;">
-<div style='text-align: left; display: inline-block; text-align: left; max-width: 640px; font-size: 18px; line-height: 1.6;'>
+<hr style="margin: 40px 0;">
+<div style='text-align: left; display: inline-block; text-align: left; max-width: 640px; font-size: 16px; line-height: 1.6;'>
   <p>🎶 <strong>아삽</strong>은 하나님을 찬양하는 일을 맡은 노래하는 선생님이었어요.</p>
   <p>다윗 왕이 하나님께 예배드릴 때, 아삽은 악기를 연주하고 노래하며 예배를 도왔답니다.</p>
   <p>그는 "하나님, 왜 나쁜 사람들이 잘 사나요?" 하고 마음의 고민을 솔직히 노래로 표현했어요.</p>
