@@ -89,6 +89,7 @@ winner_list_page = """
 <body style="text-align:center;">
 <h2>당첨자 목록</h2>
 <table border='1'>
+<body style="text-align:center;">
 <tr><th>이름</th><th>전화번호</th><th>정답</th><th>시간</th></tr>
 {% for row in rows %}
 <tr>
